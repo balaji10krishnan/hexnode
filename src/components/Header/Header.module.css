@@ -1,0 +1,91 @@
+.header-bg {
+  padding-block: 16px;
+  background-color: var(--clr-black);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 1s ease, border-bottom 1s ease,
+    padding-block 1s ease;
+}
+.header-bg.scrolled {
+  background-color: var(--clr-white);
+  border-bottom: 1px solid var(--clr-grey);
+  padding-block: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  max-width: 121px;
+}
+.menu {
+  flex-grow: 1;
+  display: flex;
+  margin-left: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-icon {
+  display: none;
+  position: relative;
+  z-index: 1001;
+}
+.menu-list {
+  display: flex;
+  gap: 16px;
+}
+.menu-item a {
+  color: var(--clr-white);
+}
+.header-bg.scrolled .menu-item a {
+  color: var(--clr-black);
+}
+.trail-btn {
+  font-size: 15px;
+  padding: 13px 26px;
+}
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-shadow);
+  z-index: 100;
+  display: none;
+  transition: all 0.3s ease;
+}
+.side-menu.active {
+  display: block;
+}
+.side-bar {
+  background-color: var(--clr-white);
+  float: right;
+  max-width: 610px;
+  width: 100%;
+  height: 100vh;
+}
+.side-menu-item {
+  padding: 25px 30px;
+}
+.side-menu-item {
+  border-bottom: 1px solid rgb(243, 243, 243);
+}
+.side-menu-item:first-child {
+  border-bottom: 1px solid var(--clr-grey);
+}
+.side-menu-item a {
+  color: var(--clr-black);
+}
+@media screen and (max-width: 1280px) {
+  .menu {
+    display: none;
+  }
+  .menu-icon {
+    position: relative;
+    display: block;
+    z-index: 1001;
+  }
+}

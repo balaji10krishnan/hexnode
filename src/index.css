@@ -1,0 +1,98 @@
+:root {
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-red: #dd0735;
+  --clr-grey: rgb(219, 217, 210);
+  --clr-shadow: rgba(0, 0, 0, 0.6);
+  --font-xs: 12px;
+  --font-s: 14px;
+  --font-m: 15px;
+  --font-xm: 16px;
+  --font-xxm: 18px;
+  --font-l: 24px;
+  --font-xl: 32px;
+  --font-xxl: 40px;
+  --font-xxxl: 42px;
+
+  --font-strong: 700;
+  --font-bold: 500;
+  --font-light: 300;
+}
+
+@font-face {
+  font-family: "hexnode_font";
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+* {
+  font-family: hexnode_font;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style-type: none;
+}
+.container {
+  max-width: 1300px;
+  width: 88%;
+  margin-inline: auto;
+}
+
+.f-xs {
+  font-size: var(--font-xs);
+}
+
+.f-s {
+  font-size: var(--font-s);
+}
+
+.f-m {
+  font-size: var(--font-m);
+}
+
+.f-xm {
+  font-size: var(--font-xm);
+}
+
+.f-xxm {
+  font-size: var(--font-xxm);
+}
+
+.f-l {
+  font-size: var(--font-l);
+}
+
+.f-xl {
+  font-size: var(--font-xl);
+}
+
+.f-xxl {
+  font-size: var(--font-xxl);
+}
+
+.f-xxxl {
+  font-size: var(--font-xxxl);
+}
+
+.f-s {
+  font-weight: var(--font-strong);
+}
+.f-b {
+  font-weight: var(--font-bold);
+}
+.f-l {
+  font-weight: var(--font-light);
+}
+.btn-red {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
