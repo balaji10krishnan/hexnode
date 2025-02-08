@@ -1,9 +1,17 @@
 :root {
+  --clr-primary: #000a18;
   --clr-white: #ffffff;
   --clr-black: #000000;
   --clr-red: #dd0735;
+  --clr-blue: #1b1c2a;
+  --clr-dred: #bb012a;
   --clr-grey: rgb(219, 217, 210);
   --clr-shadow: rgba(0, 0, 0, 0.6);
+
+  --clr-f1: #333232;
+  --clr-f2: #ffffff99;
+  --clr-f3: #b0b3d199;
+
   --font-xs: 12px;
   --font-s: 14px;
   --font-m: 15px;
@@ -29,6 +37,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  line-height: 1.5;
 }
 a {
   text-decoration: none;
@@ -78,13 +87,13 @@ ul li {
   font-size: var(--font-xxxl);
 }
 
-.f-s {
+.fw-s {
   font-weight: var(--font-strong);
 }
-.f-b {
+.fw-b {
   font-weight: var(--font-bold);
 }
-.f-l {
+.fw-l {
   font-weight: var(--font-light);
 }
 .btn-red {
@@ -95,4 +104,85 @@ ul li {
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 3px;
+}
+
+.btn-red:hover {
+  background-color: var(--clr-dred);
+}
+
+/* hover tag */
+.tag:active,
+.tag:hover,
+.tag:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+
+.tag::before,
+.tag::after {
+  position: absolute;
+  content: "";
+}
+
+.tag::before {
+  background-color: var(--clr-white);
+  transition: 0.3s ease-out;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  height: 100%;
+  width: 0%;
+  border-radius: 21px;
+}
+
+.tag {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border: none;
+  cursor: text;
+  margin: 0px 25px 15px;
+  min-width: 150px;
+  border-radius: 21px;
+}
+.tag-orange {
+  background-color: #fcd499;
+}
+.tag-blue {
+  background-color: #c2e1e6;
+}
+.tag-green {
+  background-color: #bcdcbe;
+}
+.tag span {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  padding-right: 24px;
+  transition: 0.3s;
+}
+
+.tag span:hover {
+  color: var(--clr-black);
+  transition: 0.2s 0.1s;
+}
+
+.tag:hover::before {
+  width: 100%;
+  left: 0px;
+}
+.tag-lable {
+  display: flex;
+  gap: 12px;
+}
+.tick-circle {
+  background-color: var(--clr-white);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
 }

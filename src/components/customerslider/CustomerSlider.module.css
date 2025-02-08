@@ -1,0 +1,41 @@
+.sliderContainer {
+    display: flex;
+    align-items: center;
+
+}
+
+.sliderPanel {
+    width: 960px;
+    height: 320px;
+    border-radius: 20px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+}
+
+.sliderPanel::-webkit-scrollbar {
+    display: none;
+}
+
+
+.prev,
+.next {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.2s ease-in;
+    background-repeat: no-repeat;
+}
+
+.slide {
+    scroll-snap-align: start;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}

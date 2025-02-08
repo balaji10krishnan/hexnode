@@ -92,3 +92,24 @@ export const Close = (props) => (
     <path d="m6 6 12 12" />
   </svg>
 );
+
+export const Tick = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16.188"
+    height="11.021"
+    viewBox="0 0 16.188 11.021"
+    class=""
+  >
+    <path
+      id="Path_4891"
+      data-name="Path 4891"
+      d="M-1939.354-218.176l5.416,5.14,9.4-8.917"
+      transform="translate(1940.042 222.678)"
+      fill="none"
+      stroke="#db962c"
+      stroke-width="2"
+      {...props}
+    ></path>
+  </svg>
+);
