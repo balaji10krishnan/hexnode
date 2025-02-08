@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Close, Logo, Menu } from "../../assets/svg/svg";
 import classes from "./Header.module.css";
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSideMenu, setIsSideMenu] = useState(false);
@@ -13,13 +12,11 @@ const Header = () => {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <>
       <div
@@ -52,7 +49,6 @@ const Header = () => {
                 <a href="">Customers</a>
               </li>
             </ul>
-
             <div className={`${classes["trail-plan"]}`}>
               <button className={`f-m f-b btn-red ${classes["trail-btn"]}`}>
                 14 days free trail
@@ -88,42 +84,35 @@ const Header = () => {
             )}
           </div>
         </header>
-      </div>
-      <div
-        className={`${classes["side-menu"]} ${
-          isSideMenu ? classes["active"] : ""
-        }`}
-      >
-        <div className={`${classes["side-bar"]}`}>
-          <div
-            className={`${classes["side-menu-item"]}`}
-            onClick={() => {
-              setIsSideMenu((pre) => !pre);
-              if (isSideMenu) {
-                document.body.style.overflow = "auto";
-              } else {
-                document.body.style.overflow = "hidden";
-              }
-            }}
-          >
-            Close
-          </div>
-          <div className={`${classes["side-menu-item"]}`}>
-            <a href="">Why Hexnode</a>
-          </div>
-          <div className={`${classes["side-menu-item"]}`}>
-            <a href="">Features</a>
-          </div>
-          <div className={`${classes["side-menu-item"]}`}>
-            <a href="">Platforms</a>
-          </div>
-          <div className={`${classes["side-menu-item"]}`}>
-            <a href="">Customers</a>
+        <div
+          className={`${classes["side-menu"]} ${
+            isSideMenu ? classes["active"] : ""
+          }`}
+        >
+          <div className={`${classes["side-bar"]}`}>
+            <div className={`${classes["side-menu-item"]}`}></div>
+            <div className={`${classes["side-menu-item"]}`}>
+              <a href="">Why Hexnode</a>
+            </div>
+            <div className={`${classes["side-menu-item"]}`}>
+              <a href="">Features</a>
+            </div>
+            <div className={`${classes["side-menu-item"]}`}>
+              <a href="">Platforms</a>
+            </div>
+            <div className={`${classes["side-menu-item"]}`}>
+              <a href="">Customers</a>
+            </div>
+            <div className={`${classes["side-menu-item"]}`}>
+              <button className={`f-m f-b btn-red ${classes["trail-btn"]}`}>
+                14 days free trail
+              </button>
+              <a href="">Login</a>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 };
-
 export default Header;

@@ -1,14 +1,31 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import classes from "./CustomerSlider.module.css";
-const sliderList = [
-  "Slide 1: Welcome to our platform!",
-  "Slide 2: Discover new features.",
-  "Slide 3: Engage with the community.",
-  "Slide 4: Stay updated with the latest trends.",
-  "Slide 5: Thank you for being a part of our journey!",
-];
+import User1 from "../../assets/png/user-1.webp";
+import User2 from "../../assets/png/user-2.webp";
+import User3 from "../../assets/png/user-3.webp";
+import PrevIcon from "../../assets/svg/prev-arrow-icon.svg";
+import NextIcon from "../../assets/svg/next-arrow-icon.svg";
 
-const sliderList1 = [{}];
+const sliderList = [
+  {
+    text: "Hexnode is of great value. Works great with Android and iOS!",
+    name: "Justin Modrak",
+    detail: ["Technology Coordinator", "East Troy Community School District"],
+    img: User1,
+  },
+  {
+    text: "Most complete MDM solution I found, and I tested many of them, including major names",
+    name: "Dalibor Kruljac",
+    detail: ["KAMELEYA LTD"],
+    img: User2,
+  },
+  {
+    text: "It seemed to be in-line with everything we were looking at.",
+    name: "Chris Robinson",
+    detail: ["Executive Account Manager, NCS"],
+    img: User3,
+  },
+];
 
 const CustomerSlider = () => {
   const sliderRef = useRef(null);
@@ -35,32 +52,38 @@ const CustomerSlider = () => {
     }
   };
   useEffect(() => {
+    const handleResize = () => {
+      setSlideWidth(
+        window.innerWidth <= 320
+          ? 200
+          : window.innerWidth <= 686
+          ? 280
+          : window.innerWidth <= 768
+          ? 400
+          : 920
+      );
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => {
           let newIndex = prevIndex + direction;
-
-          console.log(
-            "Before update:",
-            prevIndex,
-            "->",
-            newIndex,
-            "Direction:",
-            direction
-          );
           return newIndex;
         });
-      }, 2000); // Auto-slide every 2 seconds
+      }, 10000); // Auto-slide every 2 seconds
 
       return () => clearInterval(interval); // Cleanup on unmount
     }
-  }, [isPaused, direction]); // ✅ Dependencies ensure proper reactivity
+  }, [isPaused, direction]);
 
   useEffect(() => {
-    console.log("Direction changed:", direction);
-  }, [direction]);
-  useEffect(() => {
-    console.log("current index - ", currentIndex);
     // Reverse direction at boundaries
     if (currentIndex >= sliderList.length - 1 || currentIndex <= 0) {
       setDirection((prevDirection) => -prevDirection);
@@ -70,13 +93,6 @@ const CustomerSlider = () => {
       sliderRef.current.scrollLeft = currentIndex * slideWidth;
     }
   }, [currentIndex]);
-  // const prev = () => {
-  //   sliderRef.current.scrollLeft -= 960;
-  // };
-
-  // const next = () => {
-  //   sliderRef.current.scrollLeft += 960;
-  // };
   return (
     <div className={classes.sliderContainer}>
       <button
@@ -84,13 +100,26 @@ const CustomerSlider = () => {
         onClick={prev}
         disabled={currentIndex === 0}
       >
-        prev
+        <img src={PrevIcon} alt="prev" />
       </button>
       <div className={classes.sliderPanel} ref={sliderRef}>
         {sliderList.map((slide, index) => {
           return (
             <div className={classes.slide} key={index}>
-              {slide}
+              <img src={slide.img} alt={`User ${index + 1}`} />
+              <div className={classes.slideContent}>
+                <div className={classes.titleCon}>
+                  <h4>{`"${slide.text}"`}</h4>
+                </div>
+                <div className={classes.textCon}>
+                  <div className={classes.nameText}>{slide.name}</div>
+                  <div className={classes.detail}>
+                    {slide.detail.map((detail, detailIndex) => {
+                      return <p key={`${index}-${detailIndex}`}>{detail}</p>;
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
           );
         })}
@@ -100,7 +129,7 @@ const CustomerSlider = () => {
         onClick={next}
         disabled={currentIndex === sliderList.length - 1}
       >
-        next
+        <img src={NextIcon} alt="next" />
       </button>
     </div>
   );

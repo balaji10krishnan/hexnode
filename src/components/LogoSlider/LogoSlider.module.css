@@ -1,0 +1,44 @@
+.sliderContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sliderContainer::before,
+.sliderContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sliderContainer::before {
+  left: 20;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent);
+}
+
+.sliderContainer::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+}
+
+.sliderPanel {
+  display: flex;
+  width: fit-content;
+}
+
+.logo {
+  width: 175;
+  height: 60px;
+  margin: 0 5px;
+}
+
+@media (max-width: 640px) {
+  .logo {
+    height: 40px;
+    width: 100px;
+  }
+}

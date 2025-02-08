@@ -15,7 +15,7 @@ const Intro = () => {
             <p className={`${classes["intro-label"]} f-xm fw-s`}>
               Unified Endpoint Management
             </p>
-            <p className={`${classes["intro-title"]} f-xxxl fw-s`}>
+            <p className={`${classes["intro-title"]}  fw-s`}>
               Gain control and visibility over your endpoints
             </p>
             <p className={`${classes["intro-text"]} f-xxm fw-s`}>
@@ -82,7 +82,7 @@ const Intro = () => {
         <div className={`container ${classes["blog"]}`}>
           <div className={`${classes["blog-item"]}`}>
             <img src={blog1} />
-            <p className={`${classes["blog-text"]}`}>
+            <p className={`${classes["blog-text"]} f-s`}>
               Hexnode is listed as a leader and a major player in IDC
               MarketScape UEM Vendors Assessment Reports 2024.
             </p>
@@ -90,7 +90,7 @@ const Intro = () => {
           <div className={`${classes["blog-div"]}`}></div>
           <div className={`${classes["blog-item"]}`}>
             <img src={blog2} />
-            <p className={`${classes["blog-text"]}`}>
+            <p className={`${classes["blog-text"]} f-s`}>
               Hexnode was recognized in the 2023 Gartner® Market Guide for
               Unified Endpoint Management Tools.{" "}
             </p>
@@ -98,7 +98,7 @@ const Intro = () => {
           <div className={`${classes["blog-div"]}`}></div>
           <div className={`${classes["blog-item"]}`}>
             <img src={blog3} />
-            <p className={`${classes["blog-text"]}`}>
+            <p className={`${classes["blog-text"]} f-s`}>
               Forrester includes Hexnode as a Notable vendor in The Unified
               Endpoint Management Landscape, Q3 2023.{" "}
             </p>

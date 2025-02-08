@@ -7,11 +7,12 @@
   --clr-dred: #bb012a;
   --clr-grey: rgb(219, 217, 210);
   --clr-shadow: rgba(0, 0, 0, 0.6);
-
-  --clr-f1: #333232;
+  --clr-bg: #f7f7f7;
+  --clr-head: #020a19;
+  --clr-f1: #333333;
   --clr-f2: #ffffff99;
   --clr-f3: #b0b3d199;
-
+  --clr-b-l: #d7d7d7;
   --font-xs: 12px;
   --font-s: 14px;
   --font-m: 15px;
@@ -28,12 +29,17 @@
 }
 
 @font-face {
-  font-family: "hexnode_font";
+  font-family: "robo";
   src: url("./assets/fonts/Roboto-Regular.ttf");
 }
 
+@font-face {
+  font-family: "mulish";
+  src: url("./assets/fonts/Mulish-VariableFont_wght.ttf");
+}
+
 * {
-  font-family: hexnode_font;
+  font-family: mulish;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -50,7 +56,9 @@ ul li {
   width: 88%;
   margin-inline: auto;
 }
-
+.container-padding {
+  padding-block: 80px;
+}
 .f-xs {
   font-size: var(--font-xs);
 }
@@ -185,4 +193,16 @@ ul li {
   border-radius: 50%;
   width: 32px;
   height: 32px;
+}
+
+@media screen and (max-width: 1272px) {
+  .f-xl {
+    font-size: var(--font-l);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container-padding {
+    padding-block: 60px;
+  }
 }

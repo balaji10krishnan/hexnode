@@ -1,41 +1,259 @@
 .sliderContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 
+.sliderContainer button {
+  width: 56px !important;
+  height: 56px !important;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+}
+
+.sliderContainer button:disabled {
+  cursor: not-allowed;
+}
+
+.sliderContainer button:disabled img {
+  opacity: 0.3;
+}
+
+.sliderContainer button img {
+  width: 7px;
+  height: 16px;
+  object-fit: fill;
 }
 
 .sliderPanel {
-    width: 960px;
-    height: 320px;
-    border-radius: 20px;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
+  width: 960px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .sliderPanel::-webkit-scrollbar {
-    display: none;
-}
-
-
-.prev,
-.next {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    background-position: center;
-    background-size: cover;
-    transition: all 0.2s ease-in;
-    background-repeat: no-repeat;
+  display: none;
 }
 
 .slide {
-    scroll-snap-align: start;
-    min-width: 100%;
+  scroll-snap-align: start;
+  min-width: 100%;
+  display: flex;
+}
+
+.slide img {
+  width: 320px;
+  height: 320px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.slideContent {
+  flex-grow: 1;
+  background-color: #f7f7f7;
+  border-radius: 0px 20px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titleCon {
+  padding: 40px;
+}
+
+.textCon {
+  height: 120px;
+  background-color: rgba(2, 10, 25, 0.05);
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleCon h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.textCon .nameText {
+  font-size: 20px;
+  font-weight: bold;
+  color: #020a19;
+}
+
+.textCon .detail {
+  font-size: 14px;
+  color: #020a19;
+  opacity: 0.7;
+}
+
+.textCon .detail p {
+  line-height: 15px;
+}
+
+@media (max-width: 1280px) {
+  .sliderPanel {
+    width: 780px;
+  }
+
+  .slide img {
+    width: 240px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sliderContainer {
+    padding-bottom: 90px !important;
+    width: 100%;
+    position: relative;
+  }
+
+  button {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .prev {
+    left: 42.5%;
+    /* transform: translateX(-40%); */
+  }
+
+  .next {
+    right: 42.5%;
+    /* transform: translateX(-60%); */
+  }
+
+  .sliderPanel {
+    width: 100% !important;
+  }
+
+  .slide img {
+    width: 25% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .prev {
+    left: 41% !important;
+  }
+
+  .next {
+    right: 41% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderContainer {
+    width: 400px !important;
+    overflow: hidden;
+    height: fit-content !important;
+    padding-bottom: 70px !important;
+    height: auto;
+  }
+
+  .slideContent {
+    width: 400px !important;
+    text-align: center;
+    border-radius: 0px;
+    height: auto;
+  }
+
+  .sliderPanel {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .slide {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    height: auto;
+    max-height: 500px;
+    transition: max-height 2s ease-in-out;
+    animation: expandHeight 2s ease-in-out forwards;
+  }
+
+  .slide img {
+    min-width: 400px !important;
+    height: 400px !important;
+    border-radius: 0px;
+  }
+
+  .titleCon {
+    padding: 20px 20px 30px;
+    height: auto;
+  }
+
+  .titleCon h4 {
+    font-size: 20px;
+  }
+
+  .textCon {
+    padding: 12px 20px;
+    height: auto;
+  }
+
+  .prev {
+    left: 30% !important;
+  }
+
+  .next {
+    right: 35% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .sliderContainer {
+    width: 280px !important;
+    max-width: 100% !important;
+  }
+
+  .slideContent {
+    width: 280px !important;
+    max-width: 100% !important;
+  }
+
+  .titleCon h4 {
+    font-size: 16px !important;
+  }
+
+  .nameText {
+    font-size: 14px !important;
+  }
+
+  .detail {
+    font-size: 12px !important;
+  }
+
+  .prev {
+    left: 20% !important;
+  }
+
+  .next {
+    right: 20% !important;
+  }
+}
+
+@keyframes expandHeight {
+  from {
+    max-height: 500px;
+  }
+
+  to {
+    max-height: 1000px;
+    /* Use an estimated max height */
+  }
 }
