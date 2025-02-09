@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import classes from "./CustomerSlider.module.css";
+import classes from "./CustomersSlider.module.css";
 import User1 from "../../assets/png/user-1.webp";
 import User2 from "../../assets/png/user-2.webp";
 import User3 from "../../assets/png/user-3.webp";
@@ -27,7 +27,7 @@ const sliderList = [
   },
 ];
 
-const CustomerSlider = () => {
+const CustomersSlider = () => {
   const sliderRef = useRef(null);
   const [slideWidth, setSlideWidth] = useState(920); //adjust slide width
   const [currentIndex, setCurrentIndex] = useState(0); //adjust slide index
@@ -135,4 +135,4 @@ const CustomerSlider = () => {
   );
 };
 
-export default CustomerSlider;
+export default CustomersSlider;
