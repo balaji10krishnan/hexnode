@@ -150,8 +150,6 @@ ul li {
   height: auto;
   border: none;
   cursor: text;
-  margin: 0px 25px 15px;
-  min-width: 150px;
   border-radius: 21px;
 }
 .tag-orange {
@@ -187,15 +185,46 @@ ul li {
 .tag-lable {
   display: flex;
   gap: 12px;
+  align-items: center;
 }
 .tick-circle {
   background-color: var(--clr-white);
   border-radius: 50%;
   width: 32px;
   height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 1272px) {
+@media screen and (max-width: 745px) {
+  .tag span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .tag span {
+    padding: 3px;
+  }
+  .tag-lable {
+    gap: 6px;
+  }
+  .tick-circle {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media screen and (max-width: 467px) {
+  .tag span {
+    font-size: 11px;
+  }
+  .tag-lable {
+    gap: 4px;
+  }
+}
+
+@media screen and (max-width: 635px) {
   .f-xl {
     font-size: var(--font-l);
   }

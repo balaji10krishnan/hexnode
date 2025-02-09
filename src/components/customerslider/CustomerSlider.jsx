@@ -94,26 +94,26 @@ const CustomerSlider = () => {
     }
   }, [currentIndex]);
   return (
-    <div className={classes.sliderContainer}>
+    <div className={classes["slider-container"]}>
       <button
-        className={classes.prev}
+        className={[classes["prev"], classes["slider-btn"]].join(" ")}
         onClick={prev}
         disabled={currentIndex === 0}
       >
         <img src={PrevIcon} alt="prev" />
       </button>
-      <div className={classes.sliderPanel} ref={sliderRef}>
+      <div className={classes["slider-panel"]} ref={sliderRef}>
         {sliderList.map((slide, index) => {
           return (
-            <div className={classes.slide} key={index}>
+            <div className={classes["slide"]} key={index}>
               <img src={slide.img} alt={`User ${index + 1}`} />
-              <div className={classes.slideContent}>
-                <div className={classes.titleCon}>
-                  <h4>{`"${slide.text}"`}</h4>
+              <div className={classes["slide-content"]}>
+                <div className={classes["title-con"]}>
+                  <h4>{`"${slide["text"]}"`}</h4>
                 </div>
-                <div className={classes.textCon}>
-                  <div className={classes.nameText}>{slide.name}</div>
-                  <div className={classes.detail}>
+                <div className={classes["text-con"]}>
+                  <div className={classes["name-text"]}>{slide.name}</div>
+                  <div className={classes["detail"]}>
                     {slide.detail.map((detail, detailIndex) => {
                       return <p key={`${index}-${detailIndex}`}>{detail}</p>;
                     })}
@@ -125,7 +125,7 @@ const CustomerSlider = () => {
         })}
       </div>
       <button
-        className={classes.next}
+        className={[classes["next"], classes["slider-btn"]].join(" ")}
         onClick={next}
         disabled={currentIndex === sliderList.length - 1}
       >

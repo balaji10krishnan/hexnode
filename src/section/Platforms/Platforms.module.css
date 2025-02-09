@@ -8,6 +8,12 @@
 .platform-slide-img {
   padding-right: 40px;
 }
+
+.sticky {
+  top: 75px;
+  position: sticky;
+}
+
 .platform-slide-img img {
   width: 100%;
   border-radius: 20px;

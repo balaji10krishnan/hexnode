@@ -48,14 +48,14 @@
 }
 .tag-1 {
   position: absolute;
-  top: 12%;
-  left: 1%;
+  top: 14%;
+  left: 5%;
   z-index: 2;
 }
 .tag-2 {
   position: absolute;
   top: 40%;
-  right: -12%;
+  right: -6%;
 }
 .tag-3 {
   position: absolute;
@@ -104,6 +104,33 @@
     width: 280px;
     border-radius: 3px;
     height: 52px;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .tag-1 {
+    top: 15%;
+    left: 12%;
+  }
+  .tag-2 {
+    right: -4%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .tag-1 {
+    top: 12%;
+    left: 14%;
+  }
+  .tag-2 {
+    right: -2%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .tag-1 {
+    top: 8%;
+    left: 6%;
   }
 }
 .blog-bg {

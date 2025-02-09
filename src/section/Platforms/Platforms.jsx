@@ -61,8 +61,15 @@ const Platforms = () => {
           }
         />
         <div className={`${classes["platform-slide"]}`}>
-          <div className={`${classes["platform-slide-img"]}`}>
-            <img src={andrImg} />
+          <div className={`${classes["platform-slide-img"]} `}>
+            <div className={` ${classes["sticky"]}`}>
+              {platformsObj?.map((item, i) => (
+                <img
+                  src={item?.img}
+                  style={{ display: i == toggleItem ? "block" : "none" }}
+                />
+              ))}
+            </div>
           </div>
           <div className={`${classes["platform-acc"]}`}>
             {platformsObj?.map((item, i) => (
