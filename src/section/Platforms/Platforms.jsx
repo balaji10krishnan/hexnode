@@ -52,7 +52,7 @@ const Platforms = () => {
     },
   ];
   return (
-    <section className={`${classes["platform-bg"]}`}>
+    <section className={`${classes["platform-bg"]}`} id="plat-sec">
       <div className={`${classes["platform"]} container container-padding`}>
         <Heading
           title={"Multi-platform Endpoint Management"}

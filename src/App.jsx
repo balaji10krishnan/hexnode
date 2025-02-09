@@ -6,6 +6,7 @@ import Features from "./section/Features/Features";
 import Platforms from "./section/Platforms/Platforms";
 import Footer from "./components/Footer/Footer";
 import HexNode from "./section/HexNode/HexNode";
+import ChatBot from "./section/ChatBot/ChatBot";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <Platforms />
       <Customer />
       <Footer />
+      <ChatBot />
     </div>
   );
 }

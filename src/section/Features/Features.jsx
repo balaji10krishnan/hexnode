@@ -41,7 +41,10 @@ const Features = () => {
     },
   ];
   return (
-    <section className={`container container-padding ${classes["feature"]}`}>
+    <section
+      className={`container container-padding ${classes["feature"]}`}
+      id="features-sec"
+    >
       <Heading
         title={"Powerful endpoint management, built for the devices you choose"}
       />

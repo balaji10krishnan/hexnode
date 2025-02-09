@@ -1,0 +1,37 @@
+.chat-con {
+  position: fixed;
+  max-width: 400px;
+  width: 100%;
+  right: 20px;
+  bottom: 80px;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 100;
+  margin-left: 10px;
+}
+
+.chat-con.active {
+  max-height: 704px;
+}
+
+.chat-tap-container {
+  height: 620px;
+  overflow-y: auto;
+  background-color: var(--clr-white);
+}
+
+.chat-tap-container.home {
+  background: linear-gradient(
+    to bottom,
+    var(--clr-blue2) 20%,
+    var(--clr-white) 100%
+  );
+}
+
+@media screen and (max-width: 451px) {
+  .chat-con {
+    right: 10px;
+  }
+}

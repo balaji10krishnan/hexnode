@@ -44,7 +44,7 @@ const containers = [
 ];
 const HexNode = () => {
   return (
-    <section className={classes["hexnode-bg"]}>
+    <section className={classes["hexnode-bg"]} id="hex-sec">
       <div className={`container container-padding`}>
         <Heading title={"Why Hexnode?"} />
         <div className={classes["container-wrapper"]}>

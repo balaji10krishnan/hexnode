@@ -6,7 +6,32 @@ import blog1 from "../../assets/png/blog-1.webp";
 import blog2 from "../../assets/png/blog-2.webp";
 import blog3 from "../../assets/png/blog-3.webp";
 import { Tick } from "../../assets/svg/svg";
+import { useEffect, useState } from "react";
 const Intro = () => {
+  const [email, setEmail] = useState("");
+  const [err, setErr] = useState(false);
+
+  const validateEmail = (email) => {
+    const emailPattern = new RegExp(/^[a-z0-9.]+@[^\s@]+\.[^\s@]+$/);
+    return emailPattern.test(email);
+  };
+
+  const handleSubmit = () => {
+    const isValidEmail = validateEmail(email);
+    if (isValidEmail) {
+    } else {
+      setErr(true);
+    }
+  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setErr(false);
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [err]);
   return (
     <section>
       <div className={`${classes["intro-bg"]}`}>
@@ -25,12 +50,31 @@ const Intro = () => {
             </p>
             <div className={`${classes["email"]}`}>
               <div className={`${classes["email-input"]}`}>
-                <input placeholder="Email" />
+                <input
+                  placeholder="Email"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setErr(false);
+                  }}
+                  value={email}
+                />
               </div>
-              <button className={`f-m f-b btn-red ${classes["submit-btn"]}`}>
+              <button
+                className={`f-m f-b btn-red ${classes["submit-btn"]}`}
+                onClick={() => {
+                  handleSubmit();
+                }}
+              >
                 LET'S TRY IT OUT!
               </button>
             </div>
+            <p
+              className={`${classes["error-label"]} ${
+                err ? classes["active"] : ""
+              } f-xm`}
+            >
+              {email ? "Invalid email format" : "Please enter your work email!"}
+            </p>
           </div>
           <div className={`${classes["intro-img"]}`}>
             <div className={`${classes["black-img"]}`}>
@@ -78,31 +122,48 @@ const Intro = () => {
           </div>
         </div>
       </div>
-      <div className={`${classes["blog-bg"]}`}>
+      <div className={`${classes["blog-bg"]}`} id="blog-sec">
         <div className={`container ${classes["blog"]}`}>
-          <div className={`${classes["blog-item"]}`}>
-            <img src={blog1} />
-            <p className={`${classes["blog-text"]} f-s`}>
-              Hexnode is listed as a leader and a major player in IDC
-              MarketScape UEM Vendors Assessment Reports 2024.
-            </p>
-          </div>
+          <a
+            href="https://www.hexnode.com/blogs/mitsogo-hexnode-named-a-leader-in-idc-marketscape-worldwide-uem-software-for-apple-devices-2024-vendor-assessment/"
+            target="blank"
+          >
+            {" "}
+            <div className={`${classes["blog-item"]}`}>
+              <img src={blog1} />
+              <p className={`${classes["blog-text"]} f-s`}>
+                Hexnode is listed as a leader and a major player in IDC
+                MarketScape UEM Vendors Assessment Reports 2024.
+              </p>
+            </div>{" "}
+          </a>
+
           <div className={`${classes["blog-div"]}`}></div>
-          <div className={`${classes["blog-item"]}`}>
-            <img src={blog2} />
-            <p className={`${classes["blog-text"]} f-s`}>
-              Hexnode was recognized in the 2023 Gartner® Market Guide for
-              Unified Endpoint Management Tools.{" "}
-            </p>
-          </div>
+          <a
+            href="https://www.hexnode.com/blogs/hexnode-listed-as-a-notable-vendor-in-gartner-midmarket-context-magic-quadranttm-for-unified-endpoint-management-tools/"
+            target="blank"
+          >
+            <div className={`${classes["blog-item"]}`}>
+              <img src={blog2} />
+              <p className={`${classes["blog-text"]} f-s`}>
+                Hexnode was recognized in the 2023 Gartner® Market Guide for
+                Unified Endpoint Management Tools.{" "}
+              </p>
+            </div>
+          </a>
           <div className={`${classes["blog-div"]}`}></div>
-          <div className={`${classes["blog-item"]}`}>
-            <img src={blog3} />
-            <p className={`${classes["blog-text"]} f-s`}>
-              Forrester includes Hexnode as a Notable vendor in The Unified
-              Endpoint Management Landscape, Q3 2023.{" "}
-            </p>
-          </div>
+          <a
+            href="https://www.hexnode.com/blogs/hexnode-included-in-the-unified-endpoint-management-landscape-report/"
+            target="blank"
+          >
+            <div className={`${classes["blog-item"]}`}>
+              <img src={blog3} />
+              <p className={`${classes["blog-text"]} f-s`}>
+                Forrester includes Hexnode as a Notable vendor in The Unified
+                Endpoint Management Landscape, Q3 2023.{" "}
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </section>

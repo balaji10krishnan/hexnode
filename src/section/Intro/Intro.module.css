@@ -40,8 +40,19 @@
 .email-input input::placeholder {
   color: #c6c6c6;
 }
+
 .submit-btn {
   flex: 1;
+}
+.error-label {
+  text-align: center;
+  color: var(--clr-white);
+  font-size: 15px;
+  opacity: 0;
+  transition: 1s linear;
+}
+.error-label.active {
+  opacity: 1;
 }
 .intro-img {
   position: relative;
@@ -147,6 +158,11 @@
 .blog-item {
   max-width: 340px;
   padding-inline: 45px;
+  cursor: pointer;
+  transition: 0.4s linear;
+}
+.blog-item:hover {
+  transform: translateY(-6px);
 }
 .blog-item img {
   max-width: 156px;

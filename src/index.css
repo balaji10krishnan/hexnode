@@ -4,6 +4,7 @@
   --clr-black: #000000;
   --clr-red: #dd0735;
   --clr-blue: #1b1c2a;
+  --clr-blue2: #2e72f6;
   --clr-dred: #bb012a;
   --clr-grey: rgb(219, 217, 210);
   --clr-shadow: rgba(0, 0, 0, 0.6);
@@ -45,20 +46,25 @@
   box-sizing: border-box;
   line-height: 1.5;
 }
+
 a {
   text-decoration: none;
 }
+
 ul li {
   list-style-type: none;
 }
+
 .container {
   max-width: 1300px;
   width: 88%;
   margin-inline: auto;
 }
+
 .container-padding {
   padding-block: 80px;
 }
+
 .f-xs {
   font-size: var(--font-xs);
 }
@@ -98,12 +104,15 @@ ul li {
 .fw-s {
   font-weight: var(--font-strong);
 }
+
 .fw-b {
   font-weight: var(--font-bold);
 }
+
 .fw-l {
   font-weight: var(--font-light);
 }
+
 .btn-red {
   background-color: var(--clr-red);
   color: var(--clr-white);
@@ -152,15 +161,19 @@ ul li {
   cursor: text;
   border-radius: 21px;
 }
+
 .tag-orange {
   background-color: #fcd499;
 }
+
 .tag-blue {
   background-color: #c2e1e6;
 }
+
 .tag-green {
   background-color: #bcdcbe;
 }
+
 .tag span {
   position: relative;
   display: inline-block;
@@ -182,11 +195,13 @@ ul li {
   width: 100%;
   left: 0px;
 }
+
 .tag-lable {
   display: flex;
   gap: 12px;
   align-items: center;
 }
+
 .tick-circle {
   background-color: var(--clr-white);
   border-radius: 50%;
@@ -207,18 +222,22 @@ ul li {
   .tag span {
     padding: 3px;
   }
+
   .tag-lable {
     gap: 6px;
   }
+
   .tick-circle {
     width: 24px;
     height: 24px;
   }
 }
+
 @media screen and (max-width: 467px) {
   .tag span {
     font-size: 11px;
   }
+
   .tag-lable {
     gap: 4px;
   }

@@ -7,9 +7,11 @@ const Footer = () => {
           <p className={`${classes["footer-text"]}`}>
             Get Hexnode UEM and start securing your endpoints
           </p>
-          <button className={`btn-red ${classes["footer-btn"]}`}>
-            TRY HEXNODE FOR FREE
-          </button>
+          <a href="https://www.hexnode.com/mobile-device-management/cloud/signup/">
+            <button className={`btn-red ${classes["footer-btn"]}`}>
+              TRY HEXNODE FOR FREE
+            </button>
+          </a>
         </div>
       </div>
       <div className={`${classes["footer-light"]}`}>

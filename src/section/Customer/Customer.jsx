@@ -5,7 +5,7 @@ import classes from "./Customer.module.css";
 
 const Customer = () => {
   return (
-    <section className={`container container-padding`}>
+    <section className={`container container-padding`} id="cus-sec">
       <Heading title={"What our customers say"} />
       <div className={`${classes.cusContainer}`}>
         <CustomerSlider />

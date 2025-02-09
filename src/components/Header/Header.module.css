@@ -11,7 +11,7 @@
 .header-bg.scrolled {
   background-color: var(--clr-white);
   border-bottom: 1px solid var(--clr-grey);
-  padding-block: 20px;
+  padding-block: 9px;
 }
 .header {
   display: flex;
@@ -20,12 +20,19 @@
 }
 .logo {
   max-width: 121px;
+  cursor: pointer;
+  padding: 10px;
 }
 .menu {
   flex-grow: 1;
   display: flex;
   margin-left: 30px;
   justify-content: space-between;
+  align-items: center;
+}
+.menu-res {
+  display: flex;
+  gap: 48px;
   align-items: center;
 }
 .menu-icon {
@@ -39,6 +46,7 @@
   gap: 16px;
 }
 .menu-item a {
+  cursor: pointer;
   color: var(--clr-white);
 }
 .header-bg.scrolled .menu-item a {
@@ -47,6 +55,14 @@
 .trail-btn {
   font-size: 15px;
   padding: 13px 26px;
+}
+/* .scroll-btn-handle.active {
+  display: none;
+} */
+.scroll-btn {
+  display: none;
+  font-size: 15px;
+  padding: 10px 26px;
 }
 .side-menu {
   position: fixed;
@@ -89,6 +105,7 @@
 }
 .side-menu-item a {
   color: var(--clr-black);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1280px) {
@@ -100,5 +117,20 @@
   }
   .side-menu.active {
     display: block;
+  }
+  .scroll-btn-view .scroll-btn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .scroll-btn-view .logo {
+    display: none;
+  }
+  .scroll-btn-view .menu-icon {
+    display: none;
+  }
+  .scroll-btn-view .header {
+    justify-content: end;
   }
 }

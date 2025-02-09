@@ -1,0 +1,38 @@
+.home-container {
+  padding-inline: 20px;
+}
+.home-welcome {
+  padding-block: 32px 20px;
+  padding-inline: 20px;
+}
+.home-logo {
+  margin-bottom: 32px;
+}
+.wel-msg {
+  color: var(--clr-white);
+  font-size: 28px;
+  font-weight: 700;
+}
+.home-msg {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-b-l);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-block: 10px;
+}
+.txt-dark {
+  font-size: 14px;
+}
+.txt-light {
+  font-size: 14px;
+  color: #737373;
+}
+.home-btn {
+  color: var(--clr-white);
+  background-color: var(--clr-blue2);
+  text-align: center;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-block: 6px;
+}
