@@ -157,6 +157,8 @@ const Header = () => {
               <a
                 onClick={() => {
                   scrollToSection("hex-sec");
+                  setIsSideMenu(false);
+                  document.body.style.overflow = "auto";
                 }}
               >
                 Why Hexnode
@@ -166,6 +168,8 @@ const Header = () => {
               <a
                 onClick={() => {
                   scrollToSection("features-sec");
+                  setIsSideMenu(false);
+                  document.body.style.overflow = "auto";
                 }}
               >
                 Features
@@ -175,6 +179,8 @@ const Header = () => {
               <a
                 onClick={() => {
                   scrollToSection("plat-sec");
+                  setIsSideMenu(false);
+                  document.body.style.overflow = "auto";
                 }}
               >
                 Platforms
@@ -184,6 +190,8 @@ const Header = () => {
               <a
                 onClick={() => {
                   scrollToSection("cus-sec");
+                  setIsSideMenu(false);
+                  document.body.style.overflow = "auto";
                 }}
               >
                 Customers
